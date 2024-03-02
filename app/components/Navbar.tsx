@@ -1,28 +1,32 @@
 import Link from "next/link";
-import { Button } from "./ui/button";
-import Container from "./ui/container";
+import { Button } from "../../components/ui/button";
+import Container from "../../components/ui/container";
 import { useTheme } from "next-themes";
 import { Moon, Menu, Sun } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "../../components/ui/sheet";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
-  const routes = [
+  const links = [
     {
       href: "/",
-      label: "MuayThai",
+      name: "HOME",
     },
     {
       href: "/",
-      label: "BJJ",
+      name: "MuayThai",
+    },
+    {
+      href: "/Bjj",
+      name: "BJJ",
     },
     {
       href: "/",
-      label: "MMA",
+      name: "MMA",
     },
     {
       href: "/",
-      label: "Merge",
+      name: "Merge",
     },
   ];
 
@@ -37,13 +41,13 @@ const Header = () => {
               </SheetTrigger>
               <SheetContent side="left" className="w-[300px] sm:w-[400px]">
                 <nav className="flex flex-col gap-4">
-                  {routes.map((route, i) => (
+                  {links.map((link, i) => (
                     <Link
-                      href={route.href}
+                      href={link.href}
                       key={i}
                       className="block px-2 py-1 text-lg"
                     >
-                      {route.label}
+                      {link.name}
                     </Link>
                   ))}
                 </nav>
@@ -56,14 +60,14 @@ const Header = () => {
             </Link>
           </div>
           <nav className="mx-6 flex items-center space-x-4 hidden md:block">
-            {routes.map((route, i) => (
+            {links.map((link, i) => (
               <Button asChild variant="ghost">
                 <Link
                   key={i}
-                  href={route.href}
+                  href={link.href}
                   className="text-sm font-medium transition-color"
                 >
-                  {route.label}
+                  {link.name}
                 </Link>
               </Button>
             ))}
