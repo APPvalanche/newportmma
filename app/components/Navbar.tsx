@@ -13,19 +13,19 @@ const Header = () => {
       name: "HOME",
     },
     {
-      href: "/",
+      href: "/muaythai",
       name: "MuayThai",
     },
     {
-      href: "/Bjj",
+      href: "/bjj",
       name: "BJJ",
     },
     {
-      href: "/",
+      href: "/mma",
       name: "MMA",
     },
     {
-      href: "/",
+      href: "/merge",
       name: "Merge",
     },
   ];

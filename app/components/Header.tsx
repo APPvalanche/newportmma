@@ -1,11 +1,18 @@
-import Image from "next/image";
-import image5 from "../public/assets/image5.jpg";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const Header = () => {
   return (
-    <header className="grid items-place-center w-full h-screen bg-[url('../public/assets/image5.jpg')] bg-cover bg-center">
-      <div className="flex flex1 items-center justify-center backdrop-brightness-50">
+    <header className="flex relative justify-center items-center w-full min-h-screen">
+      <div className="absolute w-full h-screen top-0 left-0 -z-50 brightness-50">
+        <Image
+          src="/assets/image5.jpg"
+          alt="hero image"
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
+      <div className="flex flex1 items-center justify-center">
         <div className="max-w-[6000px]">
           <h1 className="text-6xl font-bold text-center">
             <span className="text-gray-100 dark:text-gray-100">
@@ -13,7 +20,9 @@ const Header = () => {
             </span>
           </h1>
           <h2 className="text-2xl text-center py-6">
-            <span className="text-gray-100 dark:text-gray-100">Visit our gym and join us today!</span>
+            <span className="text-gray-100 dark:text-gray-100">
+              Visit our gym and join us today!
+            </span>
           </h2>
           <div className="">
             <div className="flex items-center justify-center gap-4">
